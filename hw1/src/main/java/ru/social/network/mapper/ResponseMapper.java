@@ -7,10 +7,8 @@ import ru.social.network.model.User;
 
 @Component
 public class ResponseMapper {
-    private static final String USER_REGISTERED = "User registered successfully!";
-
     public RegisterResponse toRegisterResponse(User user) {
-        return new RegisterResponse(USER_REGISTERED, user.getLogin());
+        return new RegisterResponse(user.getLogin());
     }
 
     public UserResponse toUserResponse(User user) {

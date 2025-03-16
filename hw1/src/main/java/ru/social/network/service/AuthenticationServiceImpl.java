@@ -50,6 +50,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
         log.info("Register new user, with params: {}", registerRequest);
         var userEntity = requestMapper.toUserEntity(registerRequest);
         userRepository.save(userEntity);
-        return responseMapper.toRegisterResponse(userEntity);
+        var user = userRepository.findByLogin(userEntity.getLogin());
+        return responseMapper.toRegisterResponse(user.get());
     }
 }
