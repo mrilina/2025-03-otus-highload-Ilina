@@ -1,0 +1,28 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5430/network
+    username: usr
+    password: pwd
+    driver-class-name: org.postgresql.Driver
+
+  sql:
+    init:
+      mode: always
+      data-locations: classpath:data.sql
+      schema-locations: classpath:schema.sql
+
+logging:
+  level:
+    org:
+      springframework:
+        security=DEBUG:
+
+datasource:
+  hibernate.dialect: org.hibernate.dialect.PostgreSQL95Dialect
+  ddl-auto : none
+  show-sql : false
+  format-sql : true
+
+app:
+  jwtSecret: ======================Network==Spring===========================
+  jwtExpirationMs: 86400000
