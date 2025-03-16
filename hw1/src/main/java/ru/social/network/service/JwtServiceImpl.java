@@ -23,7 +23,7 @@ public class JwtServiceImpl implements JwtService {
     @Value("${app.jwtExpirationMs}")
     private int jwtExpirationMs;
 
-    private static final Logger logger = LoggerFactory.getLogger(JwtUtils.class);
+    private static final Logger logger = LoggerFactory.getLogger(JwtServiceImpl.class);
 
     @Override
     public String generateToken(Map<String, Object> extraClaims, User user) {

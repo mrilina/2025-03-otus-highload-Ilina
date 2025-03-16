@@ -15,17 +15,29 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 public class LoginResponse {
+
         private String token;
+
         private String type = "Bearer";
+
         private Long id;
+
         private String firstName;
+
         private String lastName;
+
         private String login;
+
         private Date birthDate;
+
         private String email;
+
         private Gender gender;
+
         private String hobby;
+
         private String city;
+
         private ERole role;
 
         public LoginResponse(String accessToken, User user) {

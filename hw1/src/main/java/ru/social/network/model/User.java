@@ -24,15 +24,25 @@ public class User implements UserDetails {
   private static final long serialVersionUID = 1L;
 
   private Long id;
+
   private String firstName;
+
   private String lastName;
+
   private String login;
+
   private Date birthDate;
+
   private String email;
+
   private String password;
+
   private Gender gender;
+
   private String hobby;
+
   private String city;
+
   private ERole role;
 
   @Override
