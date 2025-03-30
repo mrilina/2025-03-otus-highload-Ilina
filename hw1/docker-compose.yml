@@ -1,0 +1,26 @@
+version: '2'
+services:
+  postgres:
+    image: "postgres:13"
+    container_name: postgres
+    ports:
+      - "5430:5432"
+    environment:
+      POSTGRES_USER: usr
+      POSTGRES_PASSWORD: pwd
+      POSTGRES_DB: network
+    volumes:
+      - ./dbdata:/var/lib/postgres/
+  social_network_service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: social-network:1.0.0
+    restart: on-failure
+    ports:
+      - "8080:8080"
+    environment:
+      POSTGRES_HOST: postgres
+      POSTGRES_USER: usr
+      POSTGRES_PASSWORD: pwd
+      POSTGRES_DB: network
